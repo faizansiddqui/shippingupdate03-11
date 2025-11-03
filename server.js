@@ -36,7 +36,7 @@ app.use(wallet)  //wallet logics
 
 
 // Home Routes >>>
-router.get("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Welcome user");
 });
 
