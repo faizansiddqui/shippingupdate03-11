@@ -5,11 +5,6 @@ const host = process.env.DATABASE_URL
 const db = new Sequelize(host,
   {
     dialect: 'postgres',
-  dialectOptions: {
-    ssl: {  // Enable SSL (required for Render/Supabase/etc.)
-      require: true,
-      rejectUnauthorized: false  // Use this for self-signed certs; set to true in production if you verify certs
-    },
     family: 4,  // Force IPv4 resolution (4 = AF_INET; ignores IPv6)
     // Optional: Add timeouts to prevent hangs
     connectTimeout: 60000,
