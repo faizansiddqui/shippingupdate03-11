@@ -4,7 +4,6 @@ const { Sequelize, DataTypes, Op } = require('sequelize');
 const host = process.env.DATABASE_URL;
 const db = new Sequelize(host, {
   dialect: 'postgres',
-  family: 4,  // Force IPv4 resolution (4 = AF_INET; ignores IPv6)
   // Optional: Add timeouts to prevent hangs
   connectTimeout: 60000,
   requestTimeout: 60000,
