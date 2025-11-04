@@ -1,8 +1,8 @@
 require('dotenv').config();
 const { Sequelize, DataTypes, Op } = require('sequelize');
 
-const host = process.env.DATABASE_URL;
-const db = new Sequelize(host, {
+
+const db = new Sequelize(process.env.DATABASE_URL;, {
   dialect: 'postgres',
   // Optional: Add timeouts to prevent hangs
   connectTimeout: 60000,
