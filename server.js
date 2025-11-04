@@ -44,7 +44,7 @@ app.get("/", (req, res) => {
     res.send("❌ Outbound failed: " + e.message);
   });
 
-  res.send("Welcome user");
+  // res.send("Welcome user");
 });
 
 // Start server
