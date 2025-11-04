@@ -6,6 +6,7 @@ const authRoutes = require('./routes/authRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const createOrder = require('./routes/createOrder');
 const wallet = require('./routes/wallet')
+const https = require('https');
 
 dotenv.config();
 
@@ -37,6 +38,12 @@ app.use(wallet)  //wallet logics
 
 // Home Routes >>>
 app.get("/", (req, res) => {
+  https.get("https://www.google.com", (response) => {
+    res.send("✅ Outbound working. Status: " + response.statusCode);
+  }).on("error", (e) => {
+    res.send("❌ Outbound failed: " + e.message);
+  });
+
   res.send("Welcome user");
 });
 
